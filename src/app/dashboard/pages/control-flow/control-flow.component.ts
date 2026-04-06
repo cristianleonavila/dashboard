@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+
+type Grade = 'A'|'B'|'F';
 
 @Component({
   imports: [],
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export default class ControlFlowComponent {
 
+  public showContent = signal(false);
+
+  public grade = signal<Grade>('A');
+
+  public frameworks = signal(['Angular', 'Vue', 'Svelte','React']);
+
+  public frameworks2 = signal([]);
+
+  public toggleContent() {
+    this.showContent.update(value => !value);
+  }
 }

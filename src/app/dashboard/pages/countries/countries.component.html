@@ -1,1 +1,13 @@
-<p>countries works!</p>
+<app-title title="Listado de Paises"/>
+
+<ul>
+  @for (country of countriesService.users(); track $index) {
+    <li class="flex items-center my-2 cursor-pointer">
+      <a [routerLink]="['/dashboard/country/', country.cca3]">
+        {{country.name.common}}
+      </a>
+    </li>
+  } @empty {
+    <h3>Por favor espere...</h3>
+  }
+</ul>

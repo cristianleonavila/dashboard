@@ -36,6 +36,11 @@ export const routes: Routes = [
         loadComponent: () => import('./dashboard/pages/countries/countries.component')
       },
       {
+        path: 'country/:name',
+        title: 'Country',
+        loadComponent: () => import('./dashboard/pages/country/country.component')
+      },
+      {
         path: 'user-list',
         title: 'User List',
         loadComponent: () => import('./dashboard/pages/users/users.component')
